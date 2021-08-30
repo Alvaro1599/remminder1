@@ -1,0 +1,55 @@
+<div class="w-screen flex flex-col items-center pt-10">
+  <div class="text-3xl pb-10 font-bold">My Activities' remminder</div>
+  <div class="pb-3 w-9/12 flex justify-center">
+    <a
+      class="
+        flex
+        justify-center
+        w-4/12
+        sm:px-10
+        border-b-4
+        px-5
+        transition
+        duration-700
+        ease-out
+        hover:border-blue-700
+      "
+      routerLink="all"
+      >Todo</a
+    >
+    <a
+      class="
+        flex
+        justify-center
+        w-4/12
+        sm:px-10
+        border-b-4
+        px-5
+        transition
+        duration-700
+        ease-out
+        hover:border-blue-700
+      "
+      routerLink="active"
+      >Activos</a
+    >
+    <a
+      class="
+        flex
+        justify-center
+        w-4/12
+        sm:px-10
+        border-b-4
+        px-5
+        transition
+        duration-700
+        ease-out
+        hover:border-blue-700
+      "
+      routerLink="completed"
+      >Completados</a
+    >
+  </div>
+
+  <router-outlet></router-outlet>
+</div>

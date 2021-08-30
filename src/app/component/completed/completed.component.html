@@ -1,0 +1,30 @@
+<div class="mx-auto flex w-screen" *ngFor="let item of this.dataService.array">
+  <li class="flex py-2 w-screen justify-center" *ngIf="item.status == true">
+    <input
+      type="checkbox"
+      [checked]="item.status"
+      (change)="item.status = !item.status"
+    />
+    <div class="px-3 w-9/12" [ngClass]="{ textDecoration: item.status }">
+      {{ item.name }}
+    </div>
+    <svg
+      class="cursor-pointer"
+      (click)="deleted = item.id"
+      (click)="updateData()"
+      xmlns="http://www.w3.org/2000/svg"
+      height="24px"
+      viewBox="0 0 24 24"
+      width="24px"
+      fill="#000000"
+    >
+      <path d="M0 0h24v24H0V0z" fill="none" />
+      <path
+        d="M16 9v10H8V9h8m-1.5-6h-5l-1 1H5v2h14V4h-3.5l-1-1zM18 7H6v12c0 1.1.9 2 2 2h8c1.1 0 2-.9 2-2V7z"
+      />
+    </svg>
+  </li>
+  <div *ngIf="this.dataService.array.length == 0">
+    Ups! No hay nada que mostrar
+  </div>
+</div>

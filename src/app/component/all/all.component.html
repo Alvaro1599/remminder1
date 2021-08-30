@@ -1,0 +1,23 @@
+<div class="flex justify-center w-screen pb-5">
+  <input placeholder="Añada detalles" class="w-8/12 mr-5" type="text" #data />
+  <button
+    class="button bg-blue-400 p-2"
+    (click)="newData(data.value)"
+    (click)="data.value = ''"
+  >
+    Añadir
+  </button>
+</div>
+<div class="mx-auto flex w-9/12" *ngFor="let name of array1">
+  <li class="flex py-2">
+    <input
+      class="outline-none"
+      type="checkbox"
+      [checked]="name.status"
+      (change)="name.status = !name.status"
+    />
+    <div class="px-3" [ngClass]="{ textDecoration: name.status }">
+      {{ name.name }}
+    </div>
+  </li>
+</div>
